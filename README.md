@@ -1,6 +1,6 @@
 # Employee Attrition Analysis & Prediction (R)
 
-A complete data analysis project that investigates **why employees leave** and builds predictive models to flag at-risk employees — implemented entirely in R as coursework for **CT127-3-2-PFDA: Programming for Data Analysis** (APU, Technology Park Malaysia).
+A complete data analysis project that investigates **why employees leave** and builds predictive models to flag at-risk employees, implemented entirely in R as coursework for **CT127-3-2-PFDA: Programming for Data Analysis** (APU, Technology Park Malaysia).
 
 ## 📊 Project Overview
 
@@ -20,40 +20,40 @@ The pipeline ends with a **Random Forest risk-scoring system** that assigns ever
 
 ## 🔬 Analysis Structure
 
-### Objective 1 — Demographic Impact
+### Objective 1: Demographic Impact
 | Analysis | Question | Method |
 |---|---|---|
 | 1-1 | Which age group has the highest raw attrition rate? | Bar chart + ANOVA |
 | 1-2 | Within that age group, do gender & marital status explain the pattern? | Drill-down + Chi-square |
 | 1-3 | Does education level compound the risk in the at-risk sub-group? | Faceted comparison vs baseline |
 
-### Objective 2 — Job & Compensation
+### Objective 2: Job & Compensation
 | Analysis | Question | Method |
 |---|---|---|
 | 2-1 | Does monthly income differ between leavers and stayers? | Violin + box plot + Welch t-test |
 | 2-2 | Do overtime and income level interact? (low-income OT = highest risk?) | Interaction chart + Chi-square + Kruskal-Wallis |
 | 2-3 | Where is the problem worst? | Department bubble chart |
 
-### Objective 3 — Work Experience & Tenure
+### Objective 3: Work Experience & Tenure
 | Analysis | Question | Method |
 |---|---|---|
 | 3-1 | When do employees most often leave? ("danger window") | Density plot + Spearman correlation |
 | 3-2 | Does lack of promotion amplify attrition inside the window? | Stacked bars + Wilcoxon rank-sum |
 | 3-3 | Is "new joiner who has job-hopped before" the riskiest profile? | Triple-risk heatmap + Chi-square |
 
-### Objective 4 — Predictive Modelling
+### Objective 4: Predictive Modelling
 | Model | Role | Notes |
 |---|---|---|
 | Logistic Regression | Baseline on raw imbalanced data | Deliberately exposes the low-Recall problem |
 | Random Forest | Main model, trained on SMOTE-balanced data | Fixes Recall; feature importance closes the EDA loop |
 | Decision Tree | HR-actionable rules from RF top-8 features | ROC comparison quantifies the interpretability cost |
 
-Models are evaluated with Accuracy, Precision, **Recall** (the critical metric — missing a leaver costs more than a false alarm), F1 and AUC-ROC.
+Models are evaluated with Accuracy, Precision, **Recall** (the critical metric, since missing a leaver costs more than a false alarm), F1 and AUC-ROC.
 
 ### Extra Features
-1. **Correlation matrix** — multicollinearity screening and feature-selection guidance
-2. **K-Means clustering** (k=3 via elbow method) — unsupervised risk segments, validated against actual attrition rates
-3. **Risk scoring system** — RF probabilities converted to HR intervention tiers
+1. **Correlation matrix:** multicollinearity screening and feature-selection guidance
+2. **K-Means clustering** (k=3 via elbow method): unsupervised risk segments, validated against actual attrition rates
+3. **Risk scoring system:** RF probabilities converted to HR intervention tiers
 
 ## 🧰 Tech Stack
 
@@ -71,7 +71,7 @@ Models are evaluated with Accuracy, Precision, **Recall** (the critical metric �
    cd employee-attrition-analysis
    ```
 2. Open `Code.R` in **RStudio** (the script auto-sets its working directory via `rstudioapi`).
-3. Run the entire script — missing packages are **installed automatically** on first run:
+3. Run the entire script. Missing packages are **installed automatically** on first run:
    ```r
    source("Code.R", echo = TRUE)
    ```
@@ -87,7 +87,7 @@ Models are evaluated with Accuracy, Precision, **Recall** (the critical metric �
 
 ## 📄 Documentation
 
-The full written report — including data description, assumptions, hypothesis, per-analysis techniques, findings and interpretation — is in `Documentation .docx`.
+The full written report, including data description, assumptions, hypothesis, per-analysis techniques, findings and interpretation, is in `Documentation .docx`.
 
 ## ⚠️ Disclaimer
 
